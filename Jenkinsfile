@@ -63,6 +63,8 @@ spec:
                         echo 'test'
                         sh 'echo test'
                         sh 'kubectl version --client'
+                        sh 'kubectl version'
+                        sh 'kubectl get pods'
                         //sh 'which kubectl'
                         //sh 'ls /usr/local/bin/kubectl'
                     }
