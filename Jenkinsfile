@@ -13,6 +13,7 @@ pipeline {
             }
         }
         stage('Stage 2') {
+            agent { label 'docker' }
             steps {
                 echo 'Bye!'
             }
