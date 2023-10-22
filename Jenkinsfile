@@ -65,6 +65,7 @@ spec:
                         sh 'kubectl version --client'
                         sh 'kubectl version'
                         sh 'kubectl get pods'
+                        sh 'kubectl get pods -A'
                         //sh 'which kubectl'
                         //sh 'ls /usr/local/bin/kubectl'
                     }
