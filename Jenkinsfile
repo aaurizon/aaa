@@ -52,12 +52,14 @@ spec:
 """
                 }
             }
-            environment {
-                KUBECONFIG = credentials('kubeconfig')
-            }
+            //environment {
+            //    KUBECONFIG = credentials('kubeconfig')
+            //}
             steps {
                 container('kubectl') {
-                    sh 'kubectl version'
+                    timeout(time: 20, unit: 'SECONDS') {
+                        sh 'kubectl version'
+                    }
                 }
                 //sh('kubectl version')
                 //sh('kubectl get pods')
