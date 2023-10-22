@@ -45,10 +45,12 @@ metadata:
 spec:
   containers:
   - name: kubectl
-    image: debian:stretch
+    image: bitnami/kubectl:latest
     command:
     - cat
     tty: true
+    securityContext:
+      runAsUser: 0
 """
                 }
             }
