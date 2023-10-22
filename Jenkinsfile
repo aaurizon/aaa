@@ -12,7 +12,13 @@ pipeline {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
-        stage('Stage 2') {
+        stage('Stage 2A') {
+            agent { label 'testlabels' }
+            steps {
+                echo 'Bye!'
+            }
+        }
+        stage('Stage 2B') {
             agent { label 'docker' }
             steps {
                 echo 'Bye!'
