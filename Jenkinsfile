@@ -28,6 +28,11 @@ pipeline {
             }
         }
         stage('Stage 4 Kube') {
+            agent {
+                docker {
+                    image 'bitnami/kubectl:latest'
+                }
+            }
             environment {
                 KUBECONFIG = credentials('kubeconfig')
             }
