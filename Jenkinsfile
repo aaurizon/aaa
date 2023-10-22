@@ -56,9 +56,12 @@ spec:
                 KUBECONFIG = credentials('kubeconfig')
             }
             steps {
-                sh('kubectl version')
-                sh('kubectl get pods')
-                sh('kubectl --kubeconfig="$KUBECONFIG" get pods')
+                container('kubectl') {
+                    sh 'kubectl version'
+                }
+                //sh('kubectl version')
+                //sh('kubectl get pods')
+                //sh('kubectl --kubeconfig="$KUBECONFIG" get pods')
             }
         }
     }
