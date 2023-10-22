@@ -45,7 +45,7 @@ metadata:
 spec:
   containers:
   - name: kubectl
-    image: bitnami/kubectl:latest
+    image: debian:stretch
     command:
     - cat
     tty: true
