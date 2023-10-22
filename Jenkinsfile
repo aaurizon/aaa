@@ -29,7 +29,7 @@ pipeline {
         }
         stage('Stage 4 Kube') {
             agent {
-                docker {
+                any {
                     image 'bitnami/kubectl:latest'
                 }
             }
