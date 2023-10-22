@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        docker 'docker'
+    }
 
     environment {
         TEST = 'A'
