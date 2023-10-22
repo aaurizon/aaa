@@ -29,8 +29,27 @@ pipeline {
         }
         stage('Stage 4 Kube') {
             agent {
-                docker {
-                    image 'bitnami/kubectl:latest'
+                kubernetes {
+                    //image 'bitnami/kubectl:latest'
+//                    yaml """
+//apiVersion: v1
+//kind: Pod
+//metadata:
+//  labels:
+//    some-label: some-value
+//spec:
+//  containers:
+//  - name: kubectl
+//    image: bitnami/kubectl:latest
+//    command:
+//    - cat
+//    tty: true
+//"""
+                    containerTemplate {
+                        name 'kubectl'
+                        image 'bitnami/kubectl:latest'
+                        ttyEnabled true
+                    }
                 }
             }
             environment {
