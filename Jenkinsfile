@@ -59,9 +59,10 @@ spec:
                 container('kubectl') {
                     timeout(time: 20, unit: 'SECONDS') {
                         //sh 'kubectl version --client'
-
-                        sh 'which kubectl'
-                        sh 'ls /usr/local/bin/kubectl'
+                        echo 'test'
+                        sh 'echo test'
+                        //sh 'which kubectl'
+                        //sh 'ls /usr/local/bin/kubectl'
                     }
                 }
                 //sh('kubectl version')
