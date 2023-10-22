@@ -58,8 +58,7 @@ spec:
             steps {
                 container('kubectl') {
                     timeout(time: 20, unit: 'SECONDS') {
-                        echo "hello from container"
-                        //sh 'kubectl version'
+                        sh 'kubectl version --client'
                     }
                 }
                 //sh('kubectl version')
