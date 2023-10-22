@@ -32,7 +32,8 @@ pipeline {
                 KUBECONFIG = credentials('kubeconfig')
             }
             steps {
-                sh("kubectl --kubeconfig $KUBECONFIG get pods")
+                sh('kubectl version')
+                sh('kubectl --kubeconfig $KUBECONFIG get pods')
             }
         }
     }
